@@ -3,7 +3,7 @@ VERSION = 1.8
 # -I/usr/include/ncurses
 # CFLAGS=-Wall -g
 CFLAGS=-O2 -DVERSIONS=\"${VERSION}\"
-LIBS=-lncurses -lm
+LIBS=-lncurses -lm -ltinfo
 BIN=/usr/local/bin
 MAN=/usr/local/man
 

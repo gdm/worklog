@@ -3,6 +3,7 @@
 /* Truxton Fulton */
 /* March 27, 1995 */
 /* gcc worklog.c -lncurses -o worklog */
+/* ARM64 (gentoo): gcc worklog.c -o worklog -lncurses -ltinfo -lm */
 
 /* Thanks to :
      Tim Newsome <drz@cybercomm.net> (25 Dec 1995)
@@ -16,6 +17,8 @@
 
 #define		DEFAULT_LOG_FILE	"time.log"
 #define		DEFAULT_CONFIG_FILE	"projects"
+
+#define WORKLOG_VERSION "1.2"
 
 #define STRLEN 2048
 
@@ -167,7 +170,7 @@ void draw_main_screen()
     move(0,0) ;
     clrtobot() ;
   */
-  sprintf(temps,"Worklog version %s",VERSIONS) ;
+  sprintf(temps,"Worklog version %s",WORKLOG_VERSION) ;
   attron(A_BOLD) ;
   mvaddstr(0,5,temps) ;
   attroff(A_BOLD) ;
